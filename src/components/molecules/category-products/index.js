@@ -2,18 +2,20 @@ import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {styles} from './styles';
 
-const CategoryGrid = ({item, onSelected}) => {
+const CategoryProducts = ({item, onSelected}) => {
   return (
-    <View style={[styles.container, {backgroundColor: item.color}]}>
+    <View style={styles.container}>
       <TouchableOpacity
         style={styles.touchable}
         onPress={() => onSelected(item)}>
-        <View>
+        <View style={styles.details}>
           <Text style={styles.title}>{item.name}</Text>
+          <Text style={styles.description}>{item.description}</Text>
+          <Text style={styles.price}>${item.price}</Text>
         </View>
       </TouchableOpacity>
     </View>
   );
 };
 
-export default CategoryGrid;
+export default CategoryProducts;

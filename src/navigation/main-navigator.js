@@ -14,7 +14,10 @@ const MainNavigator = () => {
       initialRouteName="Home"
       screenOptions={{
         headerStyle: {
-          backgroundColor: Platform.OS === 'android' ? colors.primaryColor : '',
+          backgroundColor:
+            Platform.OS === 'android'
+              ? colors.primaryColor
+              : colors.accentColor,
         },
         headerTintColor:
           Platform.OS === 'android' ? 'white' : colors.primaryColor,
@@ -26,7 +29,7 @@ const MainNavigator = () => {
       <Stack.Screen
         name="Home"
         component={Home}
-        options={{headerShown: false}}
+        options={{headerShown: false, presentation: 'card'}}
       />
       <Stack.Screen
         name="Category"
